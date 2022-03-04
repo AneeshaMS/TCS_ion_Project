@@ -1,0 +1,21 @@
+.sign{ 
+    background: url(/assets/images/admin/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.invalid-feedback{
+    color:rgb(228, 13, 13); 
+    margin-top:-2px; 
+    margin-bottom:10px; 
+    font-size:15px; 
+}.gl:hover{
+    color: black;
+    font-weight: bolder;
+}
+.sign__social{
+    max-width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}

@@ -1,0 +1,69 @@
+<!-- <app-navbar ></app-navbar> -->
+
+<!-- sign in -->
+<div class="sign section--bg" data-bg="assets/images/bg.jpg" style="margin-top: 10px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sign__content">
+          <!-- registration form -->
+          <form #signup="ngForm" class="sign__form" name="signup_form" style="border: 2px solid #2f80ed;" >
+            <a href="index.html" class="sign__logo">
+              <h2>Sign Up</h2> 
+              <!-- <img src="../../../assets/images/admin/logo2.png"  alt=""> -->
+            </a>
+
+            <div class="sign__group">
+              <input type="text" class="sign__input" placeholder="Name" name="name" autocomplete="off" [(ngModel)]="userSignup.name" #name="ngModel" minlength="3" required ngModel>
+
+              <div *ngIf="(name.touched || signup.submitted)" class="invalid-feedback">
+                <div *ngIf="name.errors?.['required']">Name is required**</div>	
+                <div *ngIf="name.errors?.['minlength']">Name minimum 3 characters are required**</div>	
+              </div>
+
+              
+            </div>
+
+           
+            <div class="sign__group">
+              <input type="text" class="sign__input" placeholder="Email" [(ngModel)]="userSignup.email" name="email" autocomplete="off" #email="ngModel" required ngModel email>
+
+              <div *ngIf="(email.touched || signup.submitted)" class="invalid-feedback">
+                <div *ngIf="email.errors?.['required']">Email is required**</div>
+                <div *ngIf="email.errors?.['email']">Email is not valid**</div>	
+              </div>
+
+            </div>
+
+            <div class="sign__group">
+              <input type="password" class="sign__input" placeholder="Password"  [(ngModel)]="userSignup.password" name="pwd" #pwd="ngModel" required ngModel pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" >
+
+              <div *ngIf="(pwd.touched || signup.submitted)" class="invalid-feedback">
+                <div *ngIf="pwd.errors?.['required']">Password is required**</div>
+                <div *ngIf="pwd.errors?.['pattern']">Password must have minimum 6 charachters**</div>
+                <div *ngIf="pwd.errors?.['pattern']">Password must have capital,small letters and numbers**</div>	
+              </div>
+
+            </div>
+            <div class="sign__group">
+              <input type="password" class="sign__input" [(ngModel)]="userSignup.repeatpassword" name="repeat" placeholder="Confirm Password" required>
+              <label for="remember" style="color: red;font-size: 18px;margin-left: 10px;" *ngIf="confirm">Passwords doesnot match</label>
+            </div>
+
+            <div class="sign__group sign__group--checkbox">
+              <input id="remember" name="remember" type="checkbox" name="1"  checked="checked" required>
+              <label for="remember">I agree to the <a href="#">Privacy policy</a></label>
+            </div>
+            
+            <button class="sign__btn" type="submit" (click)="addUser()">Sign up</button>
+
+            
+            <span class="sign__text">Already have an account? <a routerLink="/MainPage/login-user">Sign in!</a></span>
+          </form>
+          <!-- registration form -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end sign in -->
