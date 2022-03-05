@@ -160,7 +160,7 @@ export class AddVideoComponent implements OnInit {
   getDuration(e:any) {
     const duration = e.target.duration;
     // this.videoSizeError = duration >= 25;
-    if (duration <= 2) {
+    if (duration <= 25) {
       this.videoSuccess = false
        this.videoSizeError = true
     } else {

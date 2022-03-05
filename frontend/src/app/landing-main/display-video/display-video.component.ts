@@ -33,7 +33,7 @@ export class DisplayVideoComponent implements OnInit {
   AddComment() {
     this.Serve.addReview(this.comment).subscribe((data) => {
       Swal.fire('✅Successfully Added')
-      this.router.navigate(['/'])
+      this.router.navigate(['/MainPage/singlevideo'])
     
     })
 }
